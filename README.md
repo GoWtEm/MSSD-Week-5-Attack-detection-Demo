@@ -1,12 +1,14 @@
-# SUTD 51.508: Secure Cyber Physical Systems
+# SUTD 51.508: Secure Cyber-Physical Systems
 ## Project: Anomaly Detection in Sensor Data (LIT101)
 
 ### Overview
-This project demonstrates two different methodologies for detecting anomalies in Cyber-Physical Systems (CPS). We specifically focus on the **LIT101** sensor (Water Level Indicator) measurements obtained from the **Secure Water Treatment (SWaT) testbed**. For more such datasets of other testbeds at iTrust, visit [https://itrust.sutd.edu.sg/itrust-labs_datasets/](https://itrust.sutd.edu.sg/itrust-labs_datasets/).
+This project demonstrates two distinct methodologies for detecting anomalies in Cyber-Physical Systems (CPS). We specifically focus on the **LIT101** sensor (Water Level Indicator) measurements obtained from the **Secure Water Treatment (SWaT) testbed**.
 
-The demo explores:
+For more datasets from other testbeds at iTrust, please visit: [https://itrust.sutd.edu.sg/itrust-labs_datasets/](https://itrust.sutd.edu.sg/itrust-labs_datasets/)
+
+**The demo explores:**
 1.  **CUSUM (Cumulative Sum)**: A statistical control chart method used to detect small, persistent shifts in the mean of a process.
-2.  **MLP (Multi-Layer Perceptron)**: A Deep Learning approach that learns the normal behavioral patterns of the system and flags deviations as potential security breaches.
+2.  **MLP (Multi-Layer Perceptron)**: A Deep Learning approach that learns normal behavioral patterns of the system to flag deviations as potential security breaches.
 
 ---
 
@@ -15,12 +17,11 @@ The demo explores:
 .
 ├── CUSUM_demo.py          # Statistical Anomaly Detection Script
 ├── MLP_demo.py            # Deep Learning Anomaly Detection Script
+├── pyproject.toml         # Project metadata and dependencies (Modern PEP 621)
 ├── Dataset/
 │   └── dataset.csv        # Raw sensor data (LIT101, Valve, Pump)
-├── CUSUM_results/         # Generated CUSUM plots and CSV results
-├── MLP_results/           # Generated MLP plots and trained model (.h5)
 ├── requirements.txt       # Project dependencies
-└── .venv/                 # Python 3.12.10 Virtual Environment
+└── README.md              # Project documentation
 ```
 
 ---
@@ -38,44 +39,48 @@ The demo explores:
    source .venv/bin/activate
    ```
 
-2. **Install Dependencies** (if not already installed):
+2. **Install Dependencies**:
    ```bash
+   # Using uv
    uv pip install -r requirements.txt
-   # OR
+   
+   # Using pip
    pip install -r requirements.txt
    ```
 
 ---
 
-### How to Run the Demos
+### Driving the Demos
 
-#### 1. Statistical Demo (CUSUM)
-This script calculates baseline statistics and applies the CUSUM algorithm to detect shifts.
+#### 1. Statistical Analysis (CUSUM)
+This script calculates baseline statistics and applies the CUSUM algorithm to detect operational shifts.
 ```bash
 python CUSUM_demo.py
 ```
-*   **What to expect**: A plot showing sensor readings with red dots marking anomalies.
-*   **Outputs**: Results are saved in `CUSUM_results/`.
+*   **Expectation**: An interactive plot showing sensor readings with red markers highlighting detected anomalies.
+*   **Outputs**: Visual results are saved to the `CUSUM_results/` directory.
 
-#### 2. Machine Learning Demo (MLP)
-This script trains a Neural Network to "guess" the next water level reading and identifies attacks when those guesses are wildly inaccurate.
+#### 2. Machine Learning Analysis (MLP)
+This script trains a neural network to predict water level readings, identifying potential attacks when predictions deviate significantly from actual values.
 ```bash
 python MLP_demo.py
 ```
-*   **What to expect**: Multiple plots showing system behavior, training progress, and an "Attack Scenario" where the AI identifies a malicious data mutation.
-*   **Outputs**: All plots and the trained brain (`LIT101.h5`) are saved in `MLP_results/`.
+*   **Expectation**: Multiple visualizations illustrating system behavior, training convergence, and an "Attack Scenario" where the model identifies a synthetic data mutation attack.
+*   **Outputs**: Plots and the trained model (`LIT101.h5`) are saved to the `MLP_results/` directory.
 
 ---
 
-### Key Educational Concepts for MSSD
-- **Baseline Establishment**: Using normal data to define what "secure" operation looks like.
-- **Threshold Setting**: Defining the boundaries of acceptable operation (Safety Limits).
-- **Attack Simulation**: Demonstrating how data mutation attacks (Man-in-the-Middle) can be detected through behavioral analysis.
-- **Reproducibility**: Using fixed seeds (Seed 14) to ensure security research results are verifiable and consistent.
+### Key Educational Concepts
+- **Baseline Establishment**: Utilizing historical data to define "secure" and "normal" operational states.
+- **Threshold Configuration**: Defining safety limits and sensitivity parameters for anomaly detection.
+- **Attack Simulation**: Demonstrating how Man-in-the-Middle (MitM) data mutation attacks can be identified through behavioral analysis.
+- **Reproducibility**: Implementing fixed stochastic seeds (Seed 14) to ensure verifiable and consistent research results.
 
 ---
-*Created for MSSD Class 51.508: Secure Cyber Physical Systems*
 
 ### Copyright & Usage Notice
-**© 2026. All Rights Reserved.**
-These scripts and materials are provided strictly for **educational and research purposes**. This code should not be used in production environments or for any commercial applications without explicit authorization.
+**© 2026 iTrust SUTD. All Rights Reserved.**
+
+These scripts and materials are provided strictly for **educational and research purposes**. This code should not be utilized in production environments or for commercial applications without explicit authorization.
+
+*Created for MSSD Class 51.508: Secure Cyber-Physical Systems*

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mssd-week-5-attack-detection"
+version = "0.1.0"
+description = "Anomaly Detection in Sensor Data (LIT101) using CUSUM and MLP for Secure Cyber Physical Systems."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "tensorflow",
+    "scikit-learn",
+]
+authors = [
+    { name = "GoWtEm" }
+]
+keywords = ["cps", "security", "anomaly-detection", "cusum", "mlp", "sutd"]
+
+[project.urls]
+Homepage = "https://github.com/GoWtEm/MSSD-Week-5-Attack-detection-Demo"

@@ -2,7 +2,7 @@
 ## Project: Anomaly Detection in Sensor Data (LIT101)
 
 ### Overview
-This project demonstrates two different methodologies for detecting anomalies in Cyber-Physical Systems (CPS). We specifically focus on the **LIT101** sensor (Water Level Indicator) measurements obtained from the SWaT dataset. For more such datasets of other testbeds at iTrust, visit [https://itrust.sutd.edu.sg/itrust-labs_datasets/](https://itrust.sutd.edu.sg/itrust-labs_datasets/).
+This project demonstrates two different methodologies for detecting anomalies in Cyber-Physical Systems (CPS). We specifically focus on the **LIT101** sensor (Water Level Indicator) measurements obtained from the **Secure Water Treatment (SWaT) testbed**. For more such datasets of other testbeds at iTrust, visit [https://itrust.sutd.edu.sg/itrust-labs_datasets/](https://itrust.sutd.edu.sg/itrust-labs_datasets/).
 
 The demo explores:
 1.  **CUSUM (Cumulative Sum)**: A statistical control chart method used to detect small, persistent shifts in the mean of a process.

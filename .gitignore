@@ -2,14 +2,14 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.venv/
+# .venv/ removed to allow pushing to GitHub as requested by user.
 env/
 venv/
 ENV/
 
-# Results
-MLP_results/
-CUSUM_results/
+# Results folders now included for GitHub push
+# MLP_results/
+# CUSUM_results/
 
 # OS
 .DS_Store

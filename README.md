@@ -32,21 +32,30 @@ For more datasets from other testbeds at iTrust, please visit: [https://itrust.s
 
 ---
 
-### Setup Instructions
+### Quick Start Guide
 
-1. **Activate the Virtual Environment**:
-   ```bash
-   source .venv/bin/activate
-   ```
+If you have just downloaded this repository, follow these steps to set up your environment and run the anomaly detection demos.
 
-2. **Install Dependencies**:
-   ```bash
-   # Using uv
-   uv pip install -r requirements.txt
-   
-   # Using pip
-   pip install -r requirements.txt
-   ```
+#### 1. Setup the Environment
+This project requires **Python 3.12.10**. We recommend using [uv](https://github.com/astral-sh/uv) for the fastest setup.
+
+```bash
+# Create the virtual environment
+uv venv --python 3.12.10
+
+# Activate the environment
+# On macOS/Linux:
+source .venv/bin/activate
+# On Windows:
+.venv\Scripts\activate
+
+# Install dependencies
+uv pip install -r requirements.txt
+```
+
+*Note: If you do not have `uv`, you can use standard `pip`: `python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt`*
+
+---
 
 ---
 
